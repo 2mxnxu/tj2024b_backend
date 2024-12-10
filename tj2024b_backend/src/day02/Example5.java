@@ -48,7 +48,7 @@ public class Example5 {
 		
 		System.out.println("정수 입력");
 		int int2 = scan.nextInt();
-		String result1 =  int1 %7 == 0 ? "true" : "false";
+		String result1 =  int2 %7 == 0 ? "true" : "false";
 		System.out.println(result1);
 		
 		// [지문6] 정수를 입력받아 입력받은 값이 홀수 이면서 7배수 이면 true / 아니면 false 로 console탭에 출력하시오. 
