@@ -74,7 +74,7 @@ public class Example5 {
 		int int2nd = scan.nextInt();
 		int sum1 = int1st + int2nd;
 		String pass = sum1>150 ? "합격" : "불합격";
-		System.out.println(pass);
+		System.out.println(pass); 
 	}
 
 }
