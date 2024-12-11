@@ -67,40 +67,25 @@ public class Example4 {
 		int nC = Integer.parseInt(strC);
 		
 		
-		if (nA > nB)		
-		{
-			if (nA > nC)	
-			{
-				if (nB > nC)	
-				{
+		if (nA > nB){
+			if (nA > nC){
+				if (nB > nC){
 					strResultABC = strC + strB + strA;
 				}
-				else						
-				{
+				else{
 					strResultABC = strB + strC + strA;
 				}
-			}
-			else		
-			{
+			}else{
 				strResultABC = strB + strA + strC;
 			}
-		}
-		else 
-		{
-			if (nB > nC)		
-			{
-				if (nA > nC)	
-				{
+		}else{
+			if (nB > nC){
+				if (nA > nC){
 					strResultABC = strC + strA + strB;
-				}
-				else 
-								
-				{
+				}else{
 					strResultABC = strA + strC + strB;
 				}
-			}
-			else	
-			{
+			}else{
 				strResultABC = strA + strB + strC;
 			}
 		}
