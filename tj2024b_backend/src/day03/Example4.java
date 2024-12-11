@@ -87,7 +87,13 @@ public class Example4 {
 			}
 		}
 		
-		System.out.println(strResultABC);  /*
+		System.out.println(strResultABC);  
+		
+		/*
+		 int value1 = sc.nextInt();
+		 int value2 = sc.nextInt();
+		 int value3 = sc.nextInt();
+		 */
 		
 	
 
