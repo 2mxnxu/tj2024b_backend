@@ -52,14 +52,13 @@ public class Example4 {
 		
 		String strResultABC;
 		
-		// 2. 사용자로부터 입력받기
-		System.out.print("첫 번째 정수 입력 : ");
+		System.out.print("정수 입력 : ");
 		String strA = sc.next();
 		
-		System.out.print("두 번째 정수 입력 : ");
+		System.out.print("정수 입력 : ");
 		String strB = sc.next();
 		
-		System.out.print("세 번째 정수 입력 : ");
+		System.out.print("정수 입력 : ");
 		String strC = sc.next();
 		
 		int nA = Integer.parseInt(strA);
