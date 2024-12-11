@@ -90,7 +90,7 @@ public class Example4 {
 			}
 		}
 		
-		System.out.printf("정렬 결과 : %s", strResultABC);  /*
+		System.out.println(strResultABC);  /*
 		
 	
 
