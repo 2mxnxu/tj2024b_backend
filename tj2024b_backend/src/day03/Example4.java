@@ -48,8 +48,6 @@ public class Example4 {
 		} 
 		
 		// 문제4 : 각 3개의 정수형으로 수를 입력받아 오름차순 순서대로 출력하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
-		
-		
 		String strResultABC;
 		
 		System.out.print("정수 입력 : ");
