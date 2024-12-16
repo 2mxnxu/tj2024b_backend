@@ -35,8 +35,9 @@ public class Example2 {
 				System.out.println("콜라 선택하셨습니다");
 				colaOut--;
 				colaIn++;
-				if(colaOut <=0) {
+				if(colaOut <0) {
 					System.out.println("재고가 없습니다");
+					colaIn--;
 				}
 			}
 			if(선택메뉴 == 2) {
@@ -45,6 +46,7 @@ public class Example2 {
 				sidarIn++;
 				if(sidarOut <=0) {
 					System.out.println("재고가 없습니다");
+					sidarIn--;
 				}
 			}
 			if(선택메뉴 == 3) {
@@ -53,6 +55,7 @@ public class Example2 {
 				hantaIn++;
 				if(hantaOut <=0) {
 					System.out.println("재고가 없습니다");
+					hantaIn--;
 				}
 			}
 			if(선택메뉴 == 4) {
