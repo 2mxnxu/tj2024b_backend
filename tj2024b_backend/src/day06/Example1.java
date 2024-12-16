@@ -54,7 +54,7 @@ public class Example1 {
 				}
 				}
 				else if(선택메뉴 == 2) {
-					System.out.println("대기현황" + no );
+					System.out.println("대기현황" + no + "팀" );
 				}
 				
 				
