@@ -60,7 +60,7 @@ public class Example2 {
 			}
 			if(선택메뉴 == 4) {
 				pay = (colaIn*1000) + (sidarIn*1500) + (hantaIn*2000);
-				System.out.println("결제하기 콜라 : " + colaIn + "사이다 : " + sidarIn + "환타 : " + hantaIn + "총금액 : " + pay );
+				System.out.println("결제하기 콜라 : " + colaIn +"\n"+ "사이다 : " + sidarIn +"\n"+ "환타 : " + hantaIn +"\n"+ "총금액 : " + pay );
 			}
 			
 			
