@@ -44,7 +44,7 @@ public class Example2 {
 				System.out.println("사이다 선택하셨습니다");
 				sidarOut--;
 				sidarIn++;
-				if(sidarOut <=0) {
+				if(sidarOut <0) {
 					System.out.println("재고가 없습니다");
 					sidarIn--;
 				}
@@ -53,7 +53,7 @@ public class Example2 {
 				System.out.println("환타 선택하셨습니다");
 				hantaOut--;
 				hantaIn++;
-				if(hantaOut <=0) {
+				if(hantaOut <0) {
 					System.out.println("재고가 없습니다");
 					hantaIn--;
 				}
