@@ -45,13 +45,12 @@ public class Example1 {
 					no ++;
 				}else {
 					System.out.println("더이상 대기번호를 받을 수 없습니다.");
+					break;
 				}
 				System.out.println("대기번호" + no + "번째 입니다");
 				
-				
 			}
 		
-
 	}
 
 }
