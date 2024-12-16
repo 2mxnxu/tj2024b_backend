@@ -5,4 +5,5 @@ public class Student {
 	String studentName;
 	int grade;
 	String address;
+	
 }
