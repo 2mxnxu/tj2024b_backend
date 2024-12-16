@@ -22,14 +22,17 @@ public class Example1 {
 			Scanner sc = new Scanner(System.in);
 			
 			while(true) {
+				System.out.println("1.대기등록 2.대기현황 :");
+				int 선택메뉴 = sc.nextInt();
 				
-				
+				if(선택메뉴 == 1 ) {
 				if(no == 0) {
 					System.out.println("전화번호 입력하세요 :");
 					pNum1 = sc.nextInt();
 					System.out.println("인원수를 입력해주세요");
 					person1 = sc.nextInt();
 					no ++;
+					System.out.println("대기번호" + no + "번째 입니다");
 				}
 				else if(no == 1) {
 					System.out.println("전화번호 입력하세요 :");
@@ -37,17 +40,23 @@ public class Example1 {
 					System.out.println("인원수를 입력해주세요");
 					person2 = sc.nextInt();
 					no ++;
+					System.out.println("대기번호" + no + "번째 입니다");
 				}else if(no == 2) {
 					System.out.println("전화번호 입력하세요 :");
 					pNum3 = sc.nextInt();
 					System.out.println("인원수를 입력해주세요");
 					person3 = sc.nextInt();
 					no ++;
+					System.out.println("대기번호" + no + "번째 입니다");
 				}else {
 					System.out.println("더이상 대기번호를 받을 수 없습니다.");
 					break;
 				}
-				System.out.println("대기번호" + no + "번째 입니다");
+				}
+				else if(선택메뉴 == 2) {
+					System.out.println("대기현황" + no );
+				}
+				
 				
 			}
 		
