@@ -45,7 +45,7 @@ public class Example2 {
 				}
 			}
 			if(선택메뉴 == 4) {
-				kiosk1.pay = (cola1.colaIn*1000) + (sidar1.sidarIn*1500) + (hanta1.hantaIn*2000);
+				kiosk1.pay = (cola1.colaPrice*cola1.colaIn) + (sidar1.sidarPrice*sidar1.sidarIn) + (hanta1.hantaprice*hanta1.hantaIn);
 				System.out.println("결제하기 콜라 : " + cola1.colaIn +"\n"+ "사이다 : " + sidar1.sidarIn +"\n"+ "환타 : " + hanta1.hantaIn +"\n"+ "총금액 : " + kiosk1.pay );
 				cola1.colaIn = 0; sidar1.sidarIn = 0; hanta1.hantaIn= 0;
 			}
