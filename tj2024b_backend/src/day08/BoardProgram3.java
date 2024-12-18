@@ -23,15 +23,17 @@ public class BoardProgram3 {
 				board.title = title;
 				board.content = content;
 				board.writer = writer;
+				boolean saveState = false;
 				
 				for(int i = 0; i<=boardArray.length-1; i++) {
 					if( boardArray[i] == null) {
 						boardArray[i] = board;
-						System.out.println("등록성공");
-					}else {
-						System.out.println("등록실패");
+						saveState = true; // - 저장 여부 상태 변경 
+						break;}
+					if( saveState == true ) { System.out.println("> 게시물 등록 성공");}
+					else { System.out.println("> 게시물 등록 실패");}
 					}
-				}
+				
 				
 			}else if(choose == 2) {
 				System.out.println("출력선택 하셨습니다.");
