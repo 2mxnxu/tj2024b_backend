@@ -21,16 +21,16 @@ public class Example1 {
 				Wait wait = new Wait();
 				wait.phone = phone;
 				wait.count = count;
-				boolean state = false;
+				boolean waitState = false;
 				
 				for(int i = 0; i <= waitArray.length-1; i++) {
 					if(waitArray[i] == null) {
 						waitArray[i] = wait;
-						state = true;
+						waitState = true;
 						break;
 					}
 				}
-				if (state == true) {
+				if (waitState == true) {
 					System.out.println("명단 등록 완료");
 				}
 				else {
