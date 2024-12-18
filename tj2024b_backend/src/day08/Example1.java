@@ -2,7 +2,7 @@ package day08;
 
 import java.util.Scanner;
 
-import day08.Board;
+import day08.Wait;
 
 
 public class Example1 { 
