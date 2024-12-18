@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Example1 { // class start 
 	public static void main(String[] args) { // main start
+		
 		Wait phone1 = new Wait();
 		Wait phone2 = new Wait();
 		Wait phone3 = new Wait();
