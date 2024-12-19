@@ -17,6 +17,19 @@ public class Join {
 		join.pw = pw;
 		join.name = name;
 		
+		boolean idExists = false;
+	    for (int i = 0; i < joinArr.length; i++) {
+	        if (joinArr[i] != null && joinArr[i].id.equals(id)) {
+	            idExists = true;
+	            break;
+	        }
+	    }
+
+	    if (idExists) {
+	        System.out.println("아이디 중복입니다.");
+	        return; 
+	    }
+		
 		boolean saveState = false;
 		for(int i = 0; i <= joinArr.length-1; i++) {
 			if(joinArr[i] == null) {
