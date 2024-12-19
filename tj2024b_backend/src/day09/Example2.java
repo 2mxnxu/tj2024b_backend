@@ -14,7 +14,6 @@ public class Example2 {
 			System.out.println("1. 회원가입 2. 로그인 : ");
 			int choose = sc.nextInt();
 			
-			
 			if(choose == 1) {
 				join.joinAdd(sc,joinArr );
 			}else if(choose == 2) {
