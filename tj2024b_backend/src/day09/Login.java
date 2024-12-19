@@ -17,16 +17,25 @@ public class Login {
 			if(LoginId .equals(joinArr[i].id) && LoginPw .equals(joinArr[i].pw)) {
 				login = true;
 				break;
-			}
-
+		
 		}
+			}
 	}
 		if(login) {
 			System.out.println("로그인 성공");
 		}else {
 			System.out.println("로그인 실패");
 		}
-}
-}
+
+		}
+	}
+
 
 // String 비교할때는 무조건 .equals() 제발!!!!!!
+
+/*
+ 	1. 기본타입 : boolean char byte short int long float double (*8*)
+ 	== 기본타입 비교
+ 	2. 참조/클래스타입 : String, Scanner (8개 외)
+ 	.equals() 참조타입 비교 함수
+ */
