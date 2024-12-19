@@ -7,7 +7,6 @@ import day08.Wait;
 
 public class Example1 { 
 	public static void main(String[] args) { 
-		int[] arr1 = new int[100];
 		Wait[] waitArray = new Wait[100];
 		
 		while( true ) { 
