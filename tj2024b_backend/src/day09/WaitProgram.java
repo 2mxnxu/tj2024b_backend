@@ -31,7 +31,7 @@ public class WaitProgram {
 			for(int i = 0; i <= waitArr.length-1; i++) {
 				Wait wait = waitArr[i];
 				if(wait != null) {
-					System.out.println("순번 : "+ i+1 +  "전화번호 : " + wait.phone + "인원수 :" +wait.count);
+					System.out.println("순번 : "+ (i+1) +  "전화번호 : " + wait.phone + "인원수 :" +wait.count);
 				}
 			}
 		}
