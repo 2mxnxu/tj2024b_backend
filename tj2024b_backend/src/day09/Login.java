@@ -12,7 +12,6 @@ public class Login {
 		
 		for(int i = 0; i<= joinArr.length-1; i++) {
 			if(joinArr[i] != null) {
-				
 			if(LoginId .equals(joinArr[i].id) && LoginPw .equals(joinArr[i].pw)) {
 				System.out.println("로그인 성공");
 			}else {
@@ -22,3 +21,5 @@ public class Login {
 	}
 }
 }
+
+// String 비교할때는 무조건 .equals() 제발!!!!!!
