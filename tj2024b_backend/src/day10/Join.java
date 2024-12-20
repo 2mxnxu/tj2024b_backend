@@ -47,31 +47,32 @@ public class Join {
 	}
 	
 	public class Login {
-		static void loginStart(Scanner sc, day10.JoinInfo[] joinArr) {
-			System.out.println("로그인");
-			System.out.println("id를 입력해주세요");
-			String LoginId = sc.next();
-			System.out.println("비밀번호를 입력해주세요");
-			String LoginPw = sc.next();
-			
-			boolean login = false;
-			
-			for(int i = 0; i<= joinArr.length-1; i++) {
-				if(joinArr[i] != null) {
-				if(LoginId .equals(joinArr[i].getId()) && LoginPw .equals(joinArr[i].getId())) {
-					login = true;
-					break;
-			
-			}
-				}
-		}
-			if(login) {
-				System.out.println("로그인 성공");
-			}else {
-				System.out.println("로그인 실패");
-			}
 
-			}
-		}
+		void loginStart(Scanner sc, JoinInfo[] joinArr) {
+	        System.out.println("로그인");
+	        System.out.println("id를 입력해주세요");
+	        String loginId = sc.next();
+	        System.out.println("비밀번호를 입력해주세요");
+	        String loginPw = sc.next();
 
+	        boolean login = false;
+
+	        for (int i = 0; i < joinArr.length; i++) {
+	            if (joinArr[i] != null) {
+	                if (loginId.equals(joinArr[i].getId()) && loginPw.equals(joinArr[i].getPw())) {
+	                    login = true;
+	                    break;
+	                }
+	            }
+	        }
+		
+
+	        if (login) {
+	            System.out.println("로그인 성공");
+	        } else {
+	            System.out.println("로그인 실패");
+	        }
+	    }
+	}
 }
+	

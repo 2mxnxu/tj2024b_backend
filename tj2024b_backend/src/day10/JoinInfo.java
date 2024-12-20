@@ -21,7 +21,6 @@ public class JoinInfo {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
-		
 	}
 
 

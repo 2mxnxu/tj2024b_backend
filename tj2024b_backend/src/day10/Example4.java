@@ -10,6 +10,7 @@ public class Example4 {
 
 		Scanner sc = new Scanner(System.in);
 		Join join = new Join();
+		Join.Login login = join.new Login();
 		JoinInfo [] joinArr = new JoinInfo[100];
 
 		while(true) {
@@ -19,7 +20,7 @@ public class Example4 {
 			if(choose == 1) {
 				join.joinAdd(sc,joinArr );
 			}else if(choose == 2) {
-				Login.loginStart(sc, joinArr );
+				login.loginStart(sc, joinArr );
 			}
 		}
 	}
