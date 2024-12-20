@@ -14,7 +14,7 @@ public class Login {
 		
 		for(int i = 0; i<= joinArr.length-1; i++) {
 			if(joinArr[i] != null) {
-			if(LoginId .equals(joinArr[i].id) && LoginPw .equals(joinArr[i].pw)) {
+			if(LoginId .equals(joinArr[i].getId()) && LoginPw .equals(joinArr[i].getPw())) {
 				login = true;
 				break;
 		
