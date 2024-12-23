@@ -29,6 +29,7 @@ public class Example1 {
 			if(choose == 1) {
 				join.joinAdd(sc,joinArr);
 			}else if(choose == 2) {
+				login.loginStart(sc, joinArr);
 				boolean isLoggedIn = login.loginStart(sc, joinArr);
 				if(isLoggedIn) {
 					while(true) {
