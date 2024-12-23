@@ -1,6 +1,5 @@
 package day11;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BoardService {

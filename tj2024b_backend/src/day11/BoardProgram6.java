@@ -18,7 +18,7 @@ public class BoardProgram6 {
 			if(choose == 1) {
 				bs.boardAdd(sc, boards);
 			}else if(choose == 2) {
-				bs.boardPrint(boards);
+				bs.boardPrint(boards, null);
 			}
 			
 		}
