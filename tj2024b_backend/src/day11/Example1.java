@@ -29,7 +29,7 @@ public class Example1 {
 			if(choose == 1) {
 				join.joinAdd(sc,joinArr);
 			}else if(choose == 2) {
-				boolean isLoggedIn = login.loginStart(sc, joinArr); ;
+				boolean isLoggedIn = login.loginStart(sc, joinArr);
 				if(isLoggedIn) {
 					while(true) {
 						System.out.println("1. 등록 2. 출력 : ");
@@ -37,18 +37,15 @@ public class Example1 {
 		
 						if(choose1 == 1) {
 							bs.boardAdd(sc, boards);
-						}else if(choose1 ==2 ) {
+						}else if(choose1 == 2) {
 							bs.boardPrint(boards, joinArr);
 						}
 					}
 				}
 			}
-			
+		
 		}
 		
-		
 	}
-			
-
 	}
 
