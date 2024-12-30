@@ -116,3 +116,23 @@ create table board(
     constraint foreign key(mno) references member(mno) # board테이블의 mno 필드가  member테이블의 mno 필드를 참조한다. 
 );
 
+create database kiosk;
+use kiosk;
+create table kioskmenu(
+	kno int, #카테고리 식별코드
+    kname varchar(10), #카테고리 이름 
+    constraint primary key(kno)
+);
+
+create table kioskproduct(
+	pno int, #제품번호
+    pname varchar(10), #제품이름
+    pcount smallint, #제품수량
+    pprice int, #제품가격
+    constraint foreign key (pno) references kioskmenu (kno)
+);
+
+create table kioskorder(
+	ono bigint auto_increment, #주문번호
+    odate datetime default now() #주문날짜
+);
