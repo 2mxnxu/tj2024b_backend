@@ -5,7 +5,7 @@ class 동물{
 	동물(){ 
 		myName ="동물"; 
 		System.out.println("[[ 동물 생성자 탄생 ]]");
-	} // 생성자 end
+	} 
 	void showMe() {
 		System.out.println("myName : " + this.myName );
 	} 
@@ -50,7 +50,7 @@ public class Example1 {
 			// 즉] 부모 타입의 자료는 자식 타입으로 변환이 될수 없다. 부모객체는 자식타입을 참조하지 않는다.
 			// 오류 : class day15.step1.동물 cannot be cast to class day15.step1.참새 
 		//참새 sparrow3 = (참새)animal;	// 동물 타입의 자료(객체가) 참새 타입으로 변환이 안된다.
-		//조류 bird3 = (조류)animal;		// 동물 타입의 자료(객체)가 조류 타입으로 변횐이 안된다.
+		//조류 bird3 = (조류)animal;		// 동물 타입의 자료(객체)가 조류 타입으로 변환이 안된다.
 		
 			// * 캐스팅 * : 가능한 전제조건은 본래 하위 타입의 객체가 상위 타입에서 다시 본래 하위 타입 변환 허용.
 			// 즉] 부모 타입의 자료는 자식 타입으로 변환이 될수 없지만 단, 객체가 본래 자식 타입의 객체 이였다면 가능하다.
@@ -59,7 +59,6 @@ public class Example1 {
 		
 			// 형제간의 타입변환이 불가능하다.
 		닭 chicken1 = new 닭(); // 인스턴스(4개 생성)
-		// 참새 sparrow5 = (참새)chicken1; // 닭은 참새를 모른다. 
-		
+		// 참새 sparrow5 = (참새)chicken1; 
 	} 
 }
