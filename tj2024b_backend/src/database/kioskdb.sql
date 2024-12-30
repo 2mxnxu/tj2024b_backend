@@ -12,7 +12,8 @@ create table kioskproduct(
     pcount smallint not null, #제품수량
     pprice int not null, #제품가격
     kno int,
-    constraint foreign key (pno) references kioskmenu (kno)
+    constraint foreign key (pno) references kioskmenu (kno),
+    constraint primary key(pname)
 );
 
 create table kioskorder(
