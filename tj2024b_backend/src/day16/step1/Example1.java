@@ -31,11 +31,9 @@ public class Example1 {
 		System.out.println(a1 instanceof A); // a1 변수가 참조하는 인스턴스에 A타입이 존재해? true
 		System.out.println(a1 instanceof Object); // a1 변수가 참조하는 인스턴스에 Object 타입이 존재해? true 
 		System.out.println(a1 instanceof C); // a1 변수가 참조하는 인스턴스에 C타입이 존재해? false
-		
 		System.out.println(a4 instanceof B); // a4 변수가 참조하는 인스턴스에 B타입이 존재해? false
 		
-		String str = new String("유재석"); // 인스턴스
-
+		
 	}
 
 }
