@@ -47,7 +47,7 @@ public class Dao {
 				// (2) SQL 기재, prepared , Statement 기재 : 연동된 db에 SQL을 기재하고 기재된 SQL 객체 반환
 				PreparedStatement ps =  conn.prepareStatement(sql);
 				// (3) 기재된 SQL 실행 .executeUpdate() : 현재 기재된 SQL을 실행하고 처리한 레코드 수 반환 함수. int 반환
-				ps.executeUpdate(); // - ctrl + enter 역할
+				//ps.executeUpdate(); // - ctrl + enter 역할
 				// (4) SQL 실행 결과 반환 받기
 				int count = ps.executeUpdate();
 				// (5) 반환 결과 조작

@@ -12,11 +12,11 @@ public class Example2 {
 		// [select 확인]
 		Dao.getInstance().select();
 		
-		//Dao.getInstance().update();
+		Dao.getInstance().update();
 		
-		//Dao.getInstance().delete();
+		Dao.getInstance().delete();
 		
-		//Dao.getInstance().select();
+		Dao.getInstance().select();
 
 	}
 }
