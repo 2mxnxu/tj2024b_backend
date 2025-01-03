@@ -41,7 +41,6 @@ public class Dao {
 		
 		// 1. insert 함수
 		public void insert() {
-			
 			try {
 				// (1) SQL 작성
 				String sql = "insert into user(uname, uage) values('유재석', '30')";
@@ -87,7 +86,29 @@ public class Dao {
 		}
 		
 		// 3. update 함수
+		public void update( ) {
+			try {
+				String sql = "update user set uname='강호동' where uno = 2";  
+				PreparedStatement ps = conn.prepareStatement( sql ); 
+				int count = ps.executeUpdate(); 
+				if( count == 1 ) {  
+					System.out.println("[update 성공]"); return;
+				}
+			}catch ( SQLException e) { System.out.println( e ); }
+			System.out.println("[update 실패]");
+		} 
 		
-		// 4. delete 함수
-	
+		// 4. delete 함수 
+		public void delete( ) {
+			try {
+				String sql = "delete from user where uno = 1";
+				PreparedStatement ps = conn.prepareStatement(sql);
+				int count = ps.executeUpdate();
+				if( count == 1 ) {
+					System.out.println("[delete 성공]"); return;
+				}
+			}catch( SQLException e ) { System.out.println( e ); }
+			System.out.println("[delete 실패]");
+		}
+		
 }
