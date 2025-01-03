@@ -1,10 +1,14 @@
 package day18.step2_JDBC;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Example1 {
 	public static void main(String[] args) {
+		
+		// 인터페이스 타입
+		Connection connection;
 		
 		// [1] DB 연동
 		try {
@@ -14,6 +18,7 @@ public class Example1 {
 			// mysql : com.mysql.cj.jdbc.Driver
 			// oracle : oracle.jdbc.driver.OracleDriver
 			//2. db서버와 연동 시도
+			connection = 
 			DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb0103", "root", "1234");
 				// DriverManager : DB서버와 연동하는 클래스, import java.sql
 					// -> 연동 함수 : .getConnectin("DB서버URL", "DB계정명", "DB비밀번호");
@@ -24,7 +29,6 @@ public class Example1 {
 		} catch (SQLException e) {
 			System.out.println("DB연동 실패 : " + e);
 		}
-		
 		
 	}
 }

@@ -7,3 +7,29 @@
 		2. 내 프로젝트 MYSQL JDBC 라이브러리 등록
 		
 	3. DB연동 코드
+		1. 연동한 JDBC 라이브러리 클래스 로드하기, 일반예외 발생
+		Class.forName("com.mysql.cj.jdbc.Driver");
+			- mysql : com.mysql.cj.jdbc.Driver
+			- oracle : oracle.jdbc.driver.OracleDriver
+		2. 지정한 DB서버와 계정정보가 일치 했을때 DB 연동 시도하고 성공시 연동 구현체를 반환
+		DriverManager.getConnection("jdbc:mysql://ip주소:PORT/DB명", "root", "1234");
+			- local : "jdbc:mysql://localhost:3306/DB명", "root", "1234"
+			
+			- 연동된 결과를 인터페이스에서 조작할 수 있도록 하는 코드.
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb0103", "root", "1234");
+			
+	4. JDBC 핵심 인터페이스
+		* 인터페이스란? 서로 다른 클래스들 간의 동일한 목적하의 서로 다른 기능 수행하는 타입, *추상메소드
+		1. Connection
+			예] 서로 다른 DB 회사에서 제공하는 클래스들을 하나의 타입(인터페이스)에서 인스턴스 사용. p.343
+			즉] 서로 다른 DB 회사들은 자바 Connection 인터페이스의 추상메소드를 구체화 했다.
+			Connection conn = DriverManager.getConnection("mysql");
+			Connection conn = DriverManager.getConnection("oracle");
+			Connection conn = DriverManager.getConnection("mariaDB");
+
+			1. 추상메소드 : 
+				.prepareStatement("SQL문법") : 연동된 DB에 SQL문법 기재.
+					
+		2. PreparedStatement
+		
+		3. ResultSet
