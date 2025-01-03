@@ -1,4 +1,4 @@
-package day18.step1;
+package day18.step1_예외처리;
 
 import java.io.IOException;
 

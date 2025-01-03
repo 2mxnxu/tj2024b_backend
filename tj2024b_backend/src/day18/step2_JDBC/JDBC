@@ -1,0 +1,5 @@
+[JDBC]
+	1. [J] java [D] data [B] base [C] connect : 자바 데이터베이스 연동
+		-> JAVA 와 DB 서버를 연동하는 기술
+	2. JDBC 라이브러리
+		-> 라이브러리 : 미리 만들어진 클래스/인터페이스 들

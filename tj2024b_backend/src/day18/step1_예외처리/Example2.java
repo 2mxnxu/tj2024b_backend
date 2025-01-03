@@ -1,4 +1,4 @@
-package day18.step1;
+package day18.step1_예외처리;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -57,7 +57,8 @@ public class Example2 {
 		catch(NumberFormatException e1) {System.out.println(e1); }
 		catch(ArrayIndexOutOfBoundsException e2) {System.out.println(e2); }
 		catch(NullPointerException e3) {	System.out.println(e3);	}
-		finally {System.out.println("예외 여부 상관없이 무조건 실행코드");}
+		catch(Exception e) {System.out.println(e);} // 만약에 다중 catch 에서 부모클래스인 Exception 사용할 경우는 마지막에 catch
+		finally {System.out.println("예외 여부 상관없이 무조건 실행코드");} // 주로 안전하게 메모리 초기화, 연결 종료
 		
 	}
 }
