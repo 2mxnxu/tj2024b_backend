@@ -1,5 +1,5 @@
 package boardservice10.view;
 
-public class AppStrat {
+public class MemberView {
 
 }
