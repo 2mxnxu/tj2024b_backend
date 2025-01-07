@@ -25,5 +25,8 @@
 	6. REST API 명세서(스프레드시트) : Controller 매개변수/리턴값 정의서
 	7. JAVA 프로젝트 세팅 : 1.패키지구성 2.클래스구성 3. 싱글톤 구성 4.DB연동코드 5.DTO생성 6. AppStart
 	8 기능별 VIEW - CONTROLLER - DAO
+		0. 구현할 기능의 DTO 만들기
+		- VIEW[사용자] <-----------DTO------------> DB[저장소]
 		1. 회원가입 view - 회원가입 controller - 회원가입dao
+		
 	
