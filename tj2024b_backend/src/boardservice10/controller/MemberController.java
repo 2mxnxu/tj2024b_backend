@@ -14,4 +14,12 @@ public class MemberController {
 			boolean result = MemberDao.getInstance().signup(memberDto);
 			return result;
 		}
+		public String findId(MemberDto memberDto) {
+			String result = MemberDao.getInstance().findId(memberDto);
+			return result;
+		}
+		public String findPwd(MemberDto memberDto) {
+			String result = MemberDao.getInstance().findPwd(memberDto);
+			return result;
+		}
 }

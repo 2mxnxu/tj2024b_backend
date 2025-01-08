@@ -1,0 +1,1 @@
+insert into member(mid, mpwd, mname, mphone) values('abc','abc','abc','abc');

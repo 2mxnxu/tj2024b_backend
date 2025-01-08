@@ -3,6 +3,7 @@ package boardservice10.model.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import boardservice10.model.dto.MemberDto;
@@ -45,6 +46,34 @@ public class MemberDao {
 			}
 			return false;
 		}
+		public String findId(MemberDto memberDto) {
+			try {
+			String sql = "select mid from member where mname = '유재석'and mphone = '010-3333-3333'";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery(); 
+			if (rs.next() ) {
+				String findMid = rs.getNString("mid");
+				return findMid;
+			}
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+			return null;
+		}
+		public String findPwd(MemberDto memberDto) {
+			try {
+				String sql = "select * from member where mid = 'qwe123'and mphone = '010-3333-3333'";
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ResultSet rs = ps.executeQuery(); 
+				if (rs.next() ) {
+					String findMpwd = rs.getNString("mpwd");
+					return findMpwd;
+				}
+			}catch(SQLException e) {
+				System.out.println(e);
+			}
+				return null;
+			}
 }
 
 	

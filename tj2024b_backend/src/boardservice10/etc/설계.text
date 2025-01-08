@@ -27,6 +27,16 @@
 	8 기능별 VIEW - CONTROLLER - DAO
 		0. 구현할 기능의 DTO 만들기
 		- VIEW[사용자] <-----------DTO------------> DB[저장소]
-		1. 회원가입 view - 회원가입 controller - 회원가입dao
+														CRUD	DML
+		1. 회원가입 view - 회원가입 controller - 회원가입dao	C		insert
+		2. 아이디찾기 view - controller - dao				R		select
+		3. 비밀번호찾기 view - controller - dao				R		select
+		4. 로그인 view - controller - dao					R		select
+		5. 로그아웃 view - controller - dao				로직		x
+		6. 내정보조회 view - controller - dao				R		select
+		7. 회원탈퇴 view - controller - dao				D		delete, 
+		8. 회원수정 view - controller - dao				U		update
 		
-	
+		* 디자인 패턴이란 : 프로그래밍 설계 과정에서 자주 발생되는 문제점을 해결 하는 설계 방법 제시
+		
+		

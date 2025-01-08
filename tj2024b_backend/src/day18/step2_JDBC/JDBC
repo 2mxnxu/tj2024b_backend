@@ -28,8 +28,23 @@
 			Connection conn = DriverManager.getConnection("mariaDB");
 
 			1. 추상메소드 : 
-				.prepareStatement("SQL문법") : 연동된 DB에 SQL문법 기재.
+				conn.prepareStatement("SQL문법") : 연동된 DB에 SQL문법 기재하고 PreparedStatement 반환.
 					
 		2. PreparedStatement
-		
+			1. 추상메소드 :
+				ps.executeQuery();		: select 기재된 SQL을 실행하고, 처리된 레코드를 조작할 수 있는 ResultSet 반환
+				ps.executeUpdate();		: insert, update, delete 기재된 SQL를 실행하고, 처리된 레코드 수 반환
 		3. ResultSet
+			1. 추상메소드 
+				rs.next();				: select 결과 조회된 레코드들 중에서 다음 레코드 이동, 다음레코드가 있으면 true, 없으면 false 반환
+					* 레코드 : 행/가로 단위 데이터들
+					* 만약에 레코드(행) 6개 이면 next()는 6번 실행이 가능하다.
+					*	while(rs.next()) 회원목록보기, 게시물전체조회
+						if(rs.next()) 아이디찾기, 비밀번호 찾기, 로그인, 게시물개별조회
+						
+				rs.getXXX("속성명") : 현재 ResultSet가 조회중인 레코드에서 속성값 반환
+					* 속성명 : 값의 대표적인 이름	* 속성값 : 속성의 값 
+					ex) 속성명 : 나이				속성값 : 27
+					* 변수명/변수값, 속성명/속성값, 멤버변수명/멤버변수 값, 필드명/필드값
+					* XXX : 속성명의 타입, SQL int --> JAVA .getInt(), SQL varchar --> JAVA .getString()
+				
