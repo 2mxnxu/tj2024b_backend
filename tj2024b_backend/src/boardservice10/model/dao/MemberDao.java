@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.sound.midi.MidiChannel;
+
 import boardservice10.model.dto.MemberDto;
 
 
@@ -47,9 +49,12 @@ public class MemberDao {
 			return false;
 		}
 		public String findId(MemberDto memberDto) {
-			try {
-			String sql = "select mid from member where mname = '유재석'and mphone = '010-3333-3333'";
+			try { // mname = '유재석' ---> mname = ? : mname는 어떤 값이 들어갈지 정해져 있지 않다. 매개변수
+			String sql = "select mid from member where mname = ? and mphone = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
+				// 매개변수값 대입
+				ps.setString(1, memberDto.getMname());
+				ps.setString(2, memberDto.getMphone());
 			ResultSet rs = ps.executeQuery(); 
 			if (rs.next() ) {
 				String findMid = rs.getString("mid");
@@ -62,8 +67,10 @@ public class MemberDao {
 		}
 		public String findPwd(MemberDto memberDto) {
 			try {
-				String sql = "select * from member where mid = 'qwe123'and mphone = '010-3333-3333'";
+				String sql = "select * from member where mid = ? and mphone = ?";
 				PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setString(1, memberDto.getMid());
+					ps.setString(2, memberDto.getMphone());
 				ResultSet rs = ps.executeQuery(); 
 				if (rs.next() ) {
 					String findMpwd = rs.getString("mpwd");
@@ -74,6 +81,53 @@ public class MemberDao {
 			}
 				return null;
 			}
+		public int login(MemberDto memberDto) {
+			try {
+				String sql = "select mno from member where mid = ? and mpwd = ?";
+				PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setString(1, memberDto.getMid());
+					ps.setString(2, memberDto.getMpwd());
+				ResultSet rs = ps.executeQuery(); 
+				if(rs.next()) {
+					int mno = rs.getInt("mno");
+					return mno;
+				}
+			}catch(SQLException e) {
+				System.out.println(e);
+			}
+				return 0;
+			}
+		public MemberDto myInfo(int loginMno) {
+				try {
+				String sql = "select * from member where mno = ?";
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setInt(1, loginMno);
+				ResultSet rs = ps.executeQuery();
+				if(rs.next()) {
+					MemberDto memberDto = new MemberDto();
+					memberDto.setMid(rs.getString("mid"));
+					memberDto.setMname(rs.getString("mname"));
+					memberDto.setMdate(rs.getString("mdate"));
+					return memberDto;
+				}
+		} catch(SQLException e) {
+			System.out.println(e);
+		}
+				return null;
+		}
+			
+		public void delete(int loginMno) {
+			try {
+			String sql = "delete from member where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, loginMno);
+			int count = ps.executeUpdate();
+		} catch(SQLException e) {
+			return;
+		}
+		}
+		
+		
 }
 
 	
