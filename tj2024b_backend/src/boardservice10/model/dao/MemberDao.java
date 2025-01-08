@@ -52,7 +52,7 @@ public class MemberDao {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery(); 
 			if (rs.next() ) {
-				String findMid = rs.getNString("mid");
+				String findMid = rs.getString("mid");
 				return findMid;
 			}
 		}catch(SQLException e) {
@@ -66,7 +66,7 @@ public class MemberDao {
 				PreparedStatement ps = conn.prepareStatement(sql);
 				ResultSet rs = ps.executeQuery(); 
 				if (rs.next() ) {
-					String findMpwd = rs.getNString("mpwd");
+					String findMpwd = rs.getString("mpwd");
 					return findMpwd;
 				}
 			}catch(SQLException e) {
