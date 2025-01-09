@@ -17,4 +17,8 @@ public class BoardController {
 		ArrayList<BoardDto> result = BoardDao.getInstance().findAll();
 		return result;
 	}
+	public BoardDto findById(int bno) {
+		BoardDto boardDto = BoardDao.getInstance().findById(bno);
+		return boardDto;
+	}
 }

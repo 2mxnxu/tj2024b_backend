@@ -39,4 +39,27 @@ public class BoardDao extends Dao {
 		}
 		return list;
 	}
+	// 개별출력 select * from board where bno =?;
+	public BoardDto findById(int bno) {
+		try {
+			String sql = "select * from board where bno =?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, bno);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				int bno1 = rs.getInt("bno");
+				String btitle = rs.getString("btitle");
+				String bcontent = rs.getString("bcontent");
+				int bview = rs.getInt("bview");
+				String bdate = rs.getString("bdate");
+				int mno = rs.getInt("mno");
+				int cno = rs.getInt("cno");
+				BoardDto boardDto = new BoardDto(bno1, btitle, bcontent, bview, bdate, mno, cno);
+				return boardDto;
+			}
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		return null;
+	}
 }

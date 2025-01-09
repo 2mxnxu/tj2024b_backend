@@ -27,7 +27,7 @@ public class BoardView {
 			}else if(choose ==3 ) {
 				
 			}else if(choose ==4 ) {
-				
+				findById();
 			}
 		}
 	}
@@ -45,6 +45,17 @@ public class BoardView {
 			System.out.print(boardDto.getBdate()+ "\t");
 			System.out.print(boardDto.getBtitle()+ "\n");
 		}
+	}
+	public void findById() {
+		System.out.println("게시물 번호 : ");
+		int bno = scan.nextInt();
+		// 1. 컨트롤러에게 요청하고 결과 받기
+		BoardDto result = BoardController.getInstance().findById(bno);
+		// 2. 결과
+		System.out.println(result.getBtitle()+ "\n");
+		System.out.println(result.getCno()+ "\t"+ result.getMno() + "\t"+ result.getBview()+"\t"+ result.getBdate());
+		System.out.println(result.getBcontent()+ "\t");
+			// -- 추후에 댓글 출력되는 코드
 		
 	}
 }
