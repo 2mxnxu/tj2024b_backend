@@ -2,8 +2,6 @@ package boardservice10.view;
 
 import java.util.Scanner;
 
-import javax.swing.text.Document;
-
 import boardservice10.controller.MemberController;
 import boardservice10.model.dto.MemberDto;
 
@@ -15,7 +13,7 @@ public class MemberView {
 		return instance;
 	}
 	private Scanner scan = new Scanner(System.in);
-	// 0. 메인메뉴 함수
+	// 0. (로그인하기 전)메인메뉴 함수
 	public void run() {
 		while(true) {
 			System.out.println("1.회원가입 2.로그인 3.아이디찾기 4.비밀번호 찾기 :");
@@ -60,6 +58,8 @@ public class MemberView {
 		boolean result = MemberController.getInstance().login(memberDto);
 		if(result) {
 			System.out.println("로그인 성공");
+			//BoardView 메인 메뉴 메소드 호출
+			BoardView.getInstance().index();
 		}else {
 			System.out.println("로그인 실패");
 		}
@@ -126,7 +126,7 @@ public class MemberView {
 		if(choose2 == 1) {
 			
 		}else if(choose2 == 2) {
-			delete();
+			delete();break;
 		}else if(choose2 == 3) {
 			break;
 		}

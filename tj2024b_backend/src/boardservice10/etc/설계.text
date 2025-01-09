@@ -36,7 +36,9 @@
 		6. 내정보조회 view - controller - dao				R		select
 		7. 회원탈퇴 view - controller - dao				D		delete, 
 		8. 회원수정 view - controller - dao				U		update
-		
+		9. 전체게시물조회 : view -> controller - dao			R		select
+		10. 개별게시물조회 : view -> controller - dao		R		select
+				
 		* 디자인 패턴이란 : 프로그래밍 설계 과정에서 자주 발생되는 문제점을 해결 하는 설계 방법 제시
 		
 		

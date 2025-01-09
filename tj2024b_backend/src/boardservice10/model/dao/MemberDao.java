@@ -37,6 +37,7 @@ public class MemberDao {
 			try {
 			// [1] SQL 작성
 			String sql = "insert into member(mid, mpwd, mname, mphone) values('"+memberDto.getMid()+"','"+memberDto.getMpwd()+"','"+memberDto.getMname()+"','"+memberDto.getMphone()+"')";
+			
 			// [2] DB와 연동된 곳에 SQL기재
 			PreparedStatement ps = conn.prepareStatement(sql);
 			// [3] 기재된 SQL을 실행 후 결과 받기
