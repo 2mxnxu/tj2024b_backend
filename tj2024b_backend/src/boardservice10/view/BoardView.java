@@ -12,12 +12,12 @@ public class BoardView {
 	
 	public void index() {
 		while(true) {
-			System.out.println("1.로그아웃 2.내정보 3.게시물작성 4.게시물상세보기");
+			System.out.print("1.로그아웃 2.내정보 3.게시물작성 4.게시물상세보기");
 			int choose = scan.nextInt();
-			if(choose ==1 ) {
-				MemberView.getInstance().logout();break;
-			}else if(choose ==2 ) {
-				MemberView.getInstance().myInfo();
+			if( choose == 1 ) { MemberView.getInstance().logout(); break; }
+			else if( choose == 2 ) { 
+				int state = MemberView.getInstance().myInfo();
+				if( state == 0 ) { return; }
 			}else if(choose ==3 ) {
 				
 			}else if(choose ==4 ) {

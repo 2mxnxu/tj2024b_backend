@@ -111,7 +111,7 @@ public class MemberView {
 		}
 	}
 	// 6. 내정보 보기
-	public void myInfo() {
+	public int myInfo() {
 		//받는곳 = MemberController.getInstance().myInfo(주는곳);
 		MemberDto result = MemberController.getInstance().myInfo();
 		System.out.println("========= 마이 페이지 =========");
@@ -123,25 +123,27 @@ public class MemberView {
 		while(true) {
 		System.out.println("1.회원수정 2.회원탈퇴 3.뒤로가기 : ");
 		int choose2 = scan.nextInt();
-		if(choose2 == 1) {
-			
-		}else if(choose2 == 2) {
-			delete();break;
-		}else if(choose2 == 3) {
-			break;
-		}
-		}
-	}
+		if( choose2 == 1 ) { }
+		else if( choose2 == 2 ) { 
+			int state = delete();
+			if( state == 0 ) { return 0; }
+			} 
+			else if( choose2 == 3 ) { break; } // 메뉴에서 무한반복 탈출 // w end -> f end 
+		} 
+		return 1;
+	} 
 	// 7. 회원탈퇴
-	public void delete() {
+	public int delete() {
 		System.out.println("정말 회원 탈퇴 하실건가요? 예 : 0, 취소 : 1");
 		int choose2 = scan.nextInt();
 		if(choose2 == 0) {
 			MemberController.getInstance().delete();
-			logout();
-			// 탈퇴처리 컨트롤러 요청
+			return 0; // 탈퇴함
+			
 		}
+		return 1; // 탈퇴 안함
 	}
+	
 }
 
 	
