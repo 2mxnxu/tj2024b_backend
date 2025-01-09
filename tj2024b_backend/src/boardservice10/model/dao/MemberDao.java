@@ -1,35 +1,16 @@
 package boardservice10.model.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.sound.midi.MidiChannel;
-
 import boardservice10.model.dto.MemberDto;
 
-
-
-public class MemberDao {
-	private Connection conn;
-	private String dburl = "jdbc:mysql://localhost:3306/boardservice10";
-	private String dbuser = "root";
-	private String dbpwd = "1234";
-	
+public class MemberDao extends Dao{
+				//하위클래스 extends 상위클래스
 	//+ 싱글톤
 	private static MemberDao instance = new MemberDao();
-	private MemberDao() {
-		try {
-			// 1. JDBC 클래스 드라이버 로드 , Class.forName() * 예외처리 try{}catch(){}
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			// 2. 설정한 경로/계정/비밀번호 로 DB 서버 연동 시도 하고 결과를 ( 구현체 ) 반환 
-			conn = DriverManager.getConnection( dburl , dbuser , dbpwd );
-		}catch (Exception e) {
-			System.out.println("[DB 연동 실패]" + e );
-		}
-	}
+	private MemberDao() {	}
 	public static MemberDao getInstance() { return instance;} 
 	
 	// 1. 회원가입 SQL처리 메소드
@@ -127,8 +108,25 @@ public class MemberDao {
 			return;
 		}
 		}
-		
-		
+		// 8. 회원수정 
+		// update member set mpwd = ?, mname = ?, mphone = ? where mno = ?
+		public boolean update(MemberDto memberDto) {
+			try {
+			String sql = "update member set mpwd = ?, mname = ?, mphone = ? where mno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, memberDto.getMpwd());
+			ps.setString(2, memberDto.getMname());
+			ps.setString(3, memberDto.getMphone());
+			ps.setInt(4, memberDto.getMno());
+			int count = ps.executeUpdate();
+			if (count == 1) {
+				return true;
+			}
+		} catch(SQLException e) {
+			System.out.println("수정실패" + e);
+		}
+			return false;
+		}
 }
 
 	

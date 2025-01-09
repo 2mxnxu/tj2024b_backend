@@ -52,6 +52,11 @@ public class MemberController {
 			MemberDao.getInstance().delete(loginMno);
 			
 		}
+		public boolean update(MemberDto memberDto) {
+			memberDto.setMno(loginMno);
+			boolean result = MemberDao.getInstance().update(memberDto);
+			return result;
+		}
 		
 		
 		

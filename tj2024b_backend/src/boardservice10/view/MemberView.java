@@ -123,7 +123,9 @@ public class MemberView {
 		while(true) {
 		System.out.println("1.회원수정 2.회원탈퇴 3.뒤로가기 : ");
 		int choose2 = scan.nextInt();
-		if( choose2 == 1 ) { }
+		if( choose2 == 1 ) { 
+			update();
+		}
 		else if( choose2 == 2 ) { 
 			int state = delete();
 			if( state == 0 ) { return 0; }
@@ -139,9 +141,26 @@ public class MemberView {
 		if(choose2 == 0) {
 			MemberController.getInstance().delete();
 			return 0; // 탈퇴함
-			
 		}
 		return 1; // 탈퇴 안함
+	}
+	
+	// 회원수정 화면 메소드
+	public void update() {
+		System.out.println("새로운 비밀번호 : ");
+		String mpwd = scan.next();
+		System.out.println("새로운 이름 : ");
+		String mname = scan.next();
+		System.out.println("새로운 전화번호 : ");
+		String mphone = scan.next();
+		MemberDto memberDto = new MemberDto();
+		memberDto.setMpwd(mpwd); memberDto.setMname(mname); memberDto.setMphone(mphone);
+		boolean result = MemberController.getInstance().update(memberDto);
+		if(result) {
+			System.out.println("수정완료");
+		}else {
+			System.out.println("수정실패");
+		}
 	}
 	
 }
