@@ -23,7 +23,7 @@ public class StudentServiceDao {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(dburl, dbuser, dbpwd);
         } catch (Exception e) {
-            System.out.println("[DB 연동 실패] " + e.getMessage());
+            System.out.println(e);
         }
     }
 
@@ -45,7 +45,7 @@ public class StudentServiceDao {
             int count = ps.executeUpdate();
             return count == 1; 
         } catch (SQLException e) {
-            System.out.println("DB 에러 " + e);
+            System.out.println(e);
             return false;
         }
     }
@@ -80,7 +80,7 @@ public class StudentServiceDao {
             int result = ps.executeUpdate();
             return result > 0; 
         } catch (SQLException e) {
-            System.out.println("오류 발생: " + e);
+            System.out.println(e);
             return false;
         }
     }
@@ -94,7 +94,7 @@ public class StudentServiceDao {
             int rowsUpdated = ps.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException e) {
-            System.out.println("[업데이트 실패] " + e.getMessage());
+            System.out.println(e);
             return false;
         }
     }
