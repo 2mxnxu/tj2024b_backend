@@ -8,5 +8,5 @@ create table student(
     smt int,
     sen int
 );
-
+insert into student(sname,sko,smt,sen) values('ㅇㅇㅇ',12,12,12);
 select * from student;

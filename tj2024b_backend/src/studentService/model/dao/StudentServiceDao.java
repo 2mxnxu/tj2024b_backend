@@ -54,7 +54,7 @@ public class StudentServiceDao {
 		ArrayList<StudentServiceDto> list = new ArrayList<StudentServiceDto>();
 		
 		try {
-			String sql = "SELECT * FROM student";;
+			String sql = "SELECT * FROM student";
 			PreparedStatement ps;
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
