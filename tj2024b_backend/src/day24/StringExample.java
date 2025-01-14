@@ -1,5 +1,7 @@
 package day24;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class StringExample {
@@ -85,6 +87,14 @@ public class StringExample {
 		
 		// 11. contains("찾을문자열")
 		boolean findBool = "자바 프로그래밍 언어".contains("자바");
-		System.out.println(findBool);
+		System.out.println(findBool); // true
+		
+		// 12. .getBytes()
+		byte[] str12 = "자바 프로그래밍 언어".getBytes();
+		System.out.println(str12);
+		System.out.println(Arrays.toString(str12));
+		
+		System.out.println("ab".getBytes().length);
+		System.out.println("가나".getBytes().length);
 	}
 }
