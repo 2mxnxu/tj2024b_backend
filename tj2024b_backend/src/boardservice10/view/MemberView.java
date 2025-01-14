@@ -39,11 +39,23 @@ public class MemberView {
 		System.out.println("전화번호 입력 : ");
 		String mphone = scan.next();
 		MemberDto memberDto = new MemberDto(mid, mpwd, mname, mphone);
-		boolean result = MemberController.getInstance().signup(memberDto);
-		if(result) {
+		int result = MemberController.getInstance().signup(memberDto);
+		if(result == 1) {
+			System.out.println("[아이디 길이를 5~30 사이로 입력해주세요]");
+		}else if(result == 2) {
+			System.out.println("[비밀번호 길이를 5~30 사이로 입력해주세요]");
+		}else if(result == 3) {
+			System.out.println("[이름 길이를 2~20 사이로 입력해주세요]");
+		}else if(result == 4) {
+			System.out.println("[연락처에 000-0000-0000 형식으로 입력해주세요]");
+		}else if(result == 5) {
 			System.out.println("[회원가입 성공]");
-		}else {
+		}else if(result == 6) {
 			System.out.println("[회원가입 실패]");
+		}else if(result == 7) {
+			System.out.println("[이미 존재하는 아이디 입니다.]");
+		}else if(result == 8) {
+			System.out.println("[이미 존재하는 연락처 입니다.]");
 		}
 	}
 	// 2. 로그인 화면 메소드 // 입력 -> 객체화 -> 컨트롤러에게 전달하고 응답결과 받기 -> 컨트롤러의 결과에 따른 처리

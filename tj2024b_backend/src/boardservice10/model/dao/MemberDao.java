@@ -127,6 +127,33 @@ public class MemberDao extends Dao{
 		}
 			return false;
 		}
+		// 9. 특정한 속성의 중복값 검색
+			// 매개변수란 : 어떤한 값이 들어올지/대입 정해져 있지 않는 변수
+			// field : 중복을 검사할 데이터의 속성명
+			// value : 중복을 검사할 데이터
+		public boolean check(String field, String value) {
+			/* 새로운 방법
+			StringBuilder builder = new StringBuilder();
+			builder.append("select * from member where");
+			builder.append(field);
+			builder.append(" = ");
+			builder.append("'"+value+"'");
+			System.out.println(builder.toString());
+			return false;
+			*/
+			//기존방법
+			try {
+			String sql = "select * from member where "+field+" = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, value);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) return true;
+			}catch(SQLException e) {
+				System.out.println(e);
+			}
+			return false;
+		}
 }
+
 
 	
