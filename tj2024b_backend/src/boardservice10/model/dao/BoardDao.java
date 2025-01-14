@@ -70,4 +70,71 @@ public class BoardDao extends Dao {
 		}
 		return null;
 	}
-}
+	public boolean write( BoardDto boardDto ) {
+		try {
+			String sql = "insert into board(btitle,bcontent,cno,mno) "
+					+ " values(?,?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString( 1 , boardDto.getBtitle() );
+			ps.setString( 2 , boardDto.getBcontent() );
+			ps.setInt( 3 , boardDto.getCno() );
+			ps.setInt( 4 , boardDto.getMno() );
+			int count = ps.executeUpdate();
+			if( count == 1 ) return true;
+		}catch( SQLException e ) { System.out.println(e);}
+		return false;
+	}
+	public ArrayList<BoardDto> categoryAll(){
+		ArrayList<BoardDto> list = new ArrayList<BoardDto>();
+		try {
+			String sql = "select * from category ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while( rs.next() ) {
+				BoardDto boardDto = new BoardDto();
+				boardDto.setCno( rs.getInt("cno") ); 
+				boardDto.setCname( rs.getString("cname") );
+				list.add(boardDto);
+			} 
+		}catch( SQLException e ) { System.out.println(e);}
+		return list;
+	}
+	
+	public boolean update( BoardDto boardDto ) {
+		try {
+			String sql = "update board set btitle = ? , bcontent = ? where bno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString( 1 , boardDto.getBtitle() );
+			ps.setString( 2 , boardDto.getBcontent() );
+			ps.setInt( 3 , boardDto.getBno() );
+			int count = ps.executeUpdate();
+			if( count == 1 ) return true;
+		}catch( SQLException e ) { System.out.println(e);}
+		return false;
+	}
+	public boolean delete( int bno ) {
+		try {
+			String sql = "delete from board where bno = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt( 1 , bno);
+			int count = ps.executeUpdate();
+			if( count == 1 ) return true;
+		}catch( SQLException e ) { System.out.println(e); }
+		return false;
+	} 
+	
+	public boolean writeCheck( int bno , int mno )  {
+		try {
+			String sql = "select * from board where bno = ? and mno = ? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt( 1 , bno );
+			ps.setInt( 2 , mno );
+			ResultSet rs = ps.executeQuery();
+			if( rs.next() ) { return true; }
+		}catch(SQLException e ) { System.out.println( e ); }
+		return false;
+	} 
+	
+} 
+	
+
